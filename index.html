@@ -3,7 +3,8 @@
 <script> 
 let contentId = getURLParameter("content_id");
 let chapterId = getURLParameter("chapter_id");
-
+let url = "intent:#Intent;action=com.thite.smanga.ChapterAdsCheckerActivity;package=com.thite.smanga;S.chapter_id="+chapterId+";S.content_id="+contentId+";end";
+alert(url);
 window.location.href = "com.thite.smaga.ChapterAdsCheckerActivity://content_id=" + contentId + "&chapter_id=" + chapterId;
 
 function getURLParameter(name) {
