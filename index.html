@@ -1,0 +1,23 @@
+<html>
+
+<script> 
+let contentId = getURLParameter("content_id");
+let chapterId = getURLParameter("chapter_id");
+
+window.location.href = "com.thite.smaga.ChapterAdsCheckerActivity://content_id=" + contentId + "&chapter_id=" + chapterId;
+
+function getURLParameter(name) {
+    var search = window.location.search;
+    var parameters = search.substring(1).split("&");
+    for (var i = 0; i < parameters.length; i++) {
+      var parameter = parameters[i].split("=");
+      if (parameter[0] === name) {
+        return parameter[1];
+      }
+    }
+    return null;
+  }
+
+   </script>
+
+</html>
