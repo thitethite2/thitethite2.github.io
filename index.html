@@ -5,18 +5,13 @@
 let contentId = getURLParameter("content_id");
 let chapterId = getURLParameter("chapter_id");
 let url = "intent:#Intent;action=com.thite.smanga.ChapterAdsCheckerActivity;package=com.thite.smanga;S.chapter_id="+chapterId+";S.content_id="+contentId+";end";
+alert(url);
 document.getElementById("he").innerHTML = "<a href='"+url+"'>နိပ်ပါ</a>";
 
 function getURLParameter(name) {
-    var search = window.location.search;
-    var parameters = search.substring(1).split("&");
-    for (var i = 0; i < parameters.length; i++) {
-      var parameter = parameters[i].split("=");
-      if (parameter[0] === name) {
-        return parameter[1];
-      }
-    }
-    return null;
+    var queryString = window.location.href;
+    let urlParams = new URLSearchParams(queryString);
+    return urlParams.get(name);
   }
 
    </script>
