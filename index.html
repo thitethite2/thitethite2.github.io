@@ -5,8 +5,8 @@
 let contentId = getURLParameter("content_id");
 let chapterId = getURLParameter("chapter_id");
 let url = "intent:#Intent;action=com.thite.smanga.ChapterAdsCheckerActivity;package=com.thite.smanga;S.chapter_id="+chapterId+";S.content_id="+contentId+";end";
-alert(getURLParameter("chapter_id"));
-document.getElementById("he").innerHTML = "<a href='"+url+"'>နိပ်ပါ</a>";
+
+window.location.href = "<a href='"+url+"'>နိပ်ပါ</a>";
 
 function getURLParameter(name) {
     var queryString = window.location.href;
