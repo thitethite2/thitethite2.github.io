@@ -58,6 +58,7 @@
       xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
           if (xhr.status === 200) {
+		  alert("ok");
             const response = JSON.parse(xhr.responseText);
             const clientIP = response.country;
 
