@@ -54,7 +54,12 @@
     
 	function getClientIP()
 	{ 
-		const url = 'https://ipinfo.io/'; fetch(url) .then(response => { if (response.ok) { return response.json(); } else { throw new Error('Failed to retrieve client IP'); } }) .then(data => { const clientIP = data.country; handleIP(clientIP); }) .catch(error => { alert(error); }); } 
+		 $.get("https://ipinfo.io", function(response) {
+            alert(response.country);
+        }, "json");
+		}
+	
+		
 	
 
     // Show the loading message
