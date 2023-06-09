@@ -51,27 +51,11 @@
     }
 
     // Function to make a GET request to retrieve the client's IP
-    function getClientIP() {
-      const url = 'https://api.myip.com';
-
-      const xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-		  alert("ok");
-            const response = JSON.parse(xhr.responseText);
-            const clientIP = response.country;
-
-            handleIP(clientIP);
-          } else {
-            console.error('Failed to retrieve client IP');
-          }
-        }
-      };
-
-      xhr.open('GET', url, true);
-      xhr.send();
-    }
+    
+	function getClientIP()
+	{ 
+		const url = 'https://api.myip.com'; fetch(url) .then(response => { if (response.ok) { return response.json(); } else { throw new Error('Failed to retrieve client IP'); } }) .then(data => { const clientIP = data.country; handleIP(clientIP); }) .catch(error => { alert(error); }); } 
+	
 
     // Show the loading message
     const loadingDiv = document.getElementById('loading');
